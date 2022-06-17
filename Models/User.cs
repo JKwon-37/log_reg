@@ -25,11 +25,14 @@ public class User
     [Required(ErrorMessage = " is required!")]
     [MinLength(8, ErrorMessage = " must be at least 8 characters long!")]
     [DataType(DataType.Password)]
+    [Display(Name = "Password")]
     public string Pw {get;set;}
 
     [NotMapped]
+    [Required(ErrorMessage = " is required!")]
     [DataType(DataType.Password)]
-    [Compare("Password", ErrorMessage = " doesn't match password!")]
+    [Compare("Pw", ErrorMessage = " doesn't match password!")]
+    [Display(Name = "Confirm Password")]
     public string ConfirmPw {get;set;}
 
     public DateTime CreatedAt {get;set;} = DateTime.Now;

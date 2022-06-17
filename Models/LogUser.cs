@@ -8,10 +8,11 @@ public class LogUser
 {
     [Required(ErrorMessage = " is required!")]
     [EmailAddress]
-    public string Email {get;set;}
+    [Display(Name = "Email")]
+    public string LogEmail {get;set;}
 
     [Required(ErrorMessage = " is required!")]
-    [MinLength(8, ErrorMessage = " must be at least 8 characters long!")]
     [DataType(DataType.Password)]
-    public string Pw {get;set;}
+    [Display(Name = "Password")]
+    public string LogPw {get;set;}
 }
